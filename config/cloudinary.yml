@@ -5,12 +5,14 @@ development:
   api_secret: 03i3pGdJx2qmnRVyI6PcqAgEU7I
   enhance_image_tag: true
   static_image_support: false
+
 production:
   cloud_name: hn2hwf4ht
   api_key: '831784335721942'
   api_secret: 03i3pGdJx2qmnRVyI6PcqAgEU7I
   enhance_image_tag: true
   static_image_support: true
+
 test:
   cloud_name: hn2hwf4ht
   api_key: '831784335721942'
