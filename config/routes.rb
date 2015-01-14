@@ -12,14 +12,18 @@ end
   resources :users
 
   resources :posts do
+    collection do
+      get 'encontrados', to: 'posts#found', as: :found
+      get 'perdidos',    to: 'posts#lost', as: :lost
+      get 'adopciones',  to: 'posts#adoption', as: :adoption
+    end
+
     member do
       get 'geo'
     end
   end
 
-  get 'encontrados' => 'posts#encontrados'
-  get 'perdidos' => 'posts#perdidos'
-  get 'adopcion' => 'posts#adopcion'
+
 
   root 'posts#index'
 end

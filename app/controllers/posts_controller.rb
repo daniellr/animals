@@ -47,16 +47,16 @@ class PostsController < ApplicationController
     end
   end
 
-  def encontrados
-    @encontrados = Post.found.page(params[:page]).order(created_at: :desc)
+  def found
+    @founds = Post.found.page(params[:page]).order(created_at: :desc)
   end
 
-  def perdidos
-    @perdidos = Post.lost.page(params[:page]).order(created_at: :desc)
+  def lost
+    @losts = Post.lost.page(params[:page]).order(created_at: :desc)
   end
 
-  def adopcion
-    @adopcion = Post.adoption.page(params[:page]).order(created_at: :desc)
+  def adoption
+    @adoptions = Post.adoption.page(params[:page]).order(created_at: :desc)
   end
 
   def geo

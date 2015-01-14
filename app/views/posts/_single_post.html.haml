@@ -12,4 +12,4 @@
         %p= truncate post.description, length: 140
         = link_to 'Ver', post, class: "btn btn-default"
 
-    = link_to 'Ver todos', "#{post.state.pluralize}_path"
+    = link_to 'Ver todos', "#{post.state}_posts_path"

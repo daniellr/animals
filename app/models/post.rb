@@ -21,6 +21,10 @@ class Post < ActiveRecord::Base
 		self.status == 'active'
 	end
 
+	def closed?
+		self.status == 'closed'
+	end
+
 	private
 
 	def set_defaults

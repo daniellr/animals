@@ -11,9 +11,9 @@
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li= link_to "Encontrados", encontrados_path
-        %li= link_to "Perdidos", perdidos_path
-        %li= link_to "En Adopción", adopcion_path
+        %li= link_to "Encontrados", found_posts_path
+        %li= link_to "Perdidos", lost_posts_path
+        %li= link_to "En Adopción", adoption_posts_path
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown{:role => "presentation"}
           %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
