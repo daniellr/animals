@@ -25,4 +25,18 @@ namespace :translate_posts do
       post.update_attribute(:animal_type, translations[animal_type]) if translations[animal_type]
     end
   end
+
+  desc "Translate the posts status"
+  task status: :environment do
+    translations = {
+      "Activo" => "active",
+      "Cerrado" => "closed"
+    }
+
+    Post.all.each do |post|
+      status = post.status
+      post.update_attribute(:status, translations[status]) if translations[status]
+    end
+
+  end
 end

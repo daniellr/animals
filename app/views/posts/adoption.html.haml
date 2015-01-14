@@ -1,0 +1,17 @@
+%h1 Encontrados
+.row
+  .col-xs-12.col-md-8
+    - @adoptions.each do |post|
+      - if post.active?
+        .thumbnail
+          %h3= post.title
+          - if post.image.blank?
+            = image_tag "http://placehold.it/317x317", class: "img-responsive img-thumbnail"
+          - else
+            = link_to image_tag(post.image_url.to_s), post_path(post), class: "img-responsive img-thumbnail"
+
+          .caption
+            %p= truncate post.description, length: 140
+            = link_to 'Ver', post, class: "btn btn-default"
+  .col-xs-6.col-md-4
+= paginate @adoptions, :theme => 'twitter-bootstrap-3'
