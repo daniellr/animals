@@ -1,13 +1,13 @@
-!!!
 %html
   %head
-    %title Peteretes - Dashboard.
+    %title Peteretes - Dashboard
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     %meta{:content => "width=device-width", :name => "viewport"}
   %body
     .container
+      = render 'layouts/signed_in_dashboard'
       = render 'layouts/messages'
       = yield
     = render 'layouts/footer'
