@@ -5,7 +5,10 @@
       = @post.title
     %p
       %strong ¿Qué animalito es?
-      = @post.animal_type
+      - if @post.animal_type == 'dog'
+        Perrito
+      - elsif @post.animal_type == 'cat'
+        Gatito
     %p
       %strong Raza:
       = @post.breed

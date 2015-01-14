@@ -17,6 +17,7 @@ class Post < ActiveRecord::Base
 	scope :lost,			-> { where(state: 'lost') }
 	scope :adoption,	-> { where(state: 'adoption') }
 
+
 	def active?
 		self.status == 'active'
 	end
