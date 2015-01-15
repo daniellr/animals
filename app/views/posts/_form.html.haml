@@ -4,7 +4,7 @@
       = simple_form_for @post, :defaults => {:required => false}, :html => {:multipart => true} do |f|
         = f.input :title, label: 'Titulo'
         .btn-group
-          = f.input :state, as: :radio_buttons, collection: [["Encontrado", "found"], ["Perdido", "lost"], |
+          = f.input :state, label: 'Tipo', as: :radio_buttons, collection: [["Encontrado", "found"], ["Perdido", "lost"], |
             ["En Adopción", "adoption"]]                                                                   |
         = f.input :location, label: 'Ubicación'
         = f.label 'Imagen'
