@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :geolocation]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
 
   def index
@@ -9,6 +9,11 @@ class PostsController < ApplicationController
   end
 
   def show
+    @hash = Gmaps4rails.build_markers(@post) do |post, marker|
+      marker.lat post.latitude
+      marker.lng post.longitude
+      marker.infowindow post.description
+end
   end
 
   def new
@@ -59,29 +64,7 @@ class PostsController < ApplicationController
     @adoptions = Post.adoption.page(params[:page]).order(created_at: :desc)
   end
 
-  def geo
-    @post = Post.find params[:id]
-
-    @geojson = {
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [
-          @post.latitude,
-          @post.longitude
-        ]
-      },
-      properties: {
-        title: @post.title,
-        description: @post.location,
-        :"marker-color" => "#00607d",
-        :"marker-symbol" => "circle",
-        :"marker-size" => "medium"
-      }
-    }.to_json
-
-    render json: @geojson
-  end
+  
 
   private
 
@@ -90,7 +73,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :state, :description, :image, :location, :status, :contact, :animal_type, :age, :breed, :user_id)
+      params.require(:post).permit(:title, :state, :description, :image, :location, :status, :contact, :animal_type, :age, :breed, :latitude, :longitude, :user_id)
     end
 
 end

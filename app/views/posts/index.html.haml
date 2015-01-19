@@ -12,11 +12,14 @@
   .col-sm-6.col-md-4
     %h2 Encontrados
     = render partial: "single_post", locals: { posts: @found }
+    = link_to 'Ver todos', found_posts_path
 
   .col-sm-6.col-md-4
     %h2 Perdidos
     = render partial: "single_post", locals: { posts: @lost }
+    = link_to 'Ver todos', lost_posts_path
 
   .col-sm-6.col-md-4
     %h2 En Adopcion
     = render partial: "single_post", locals: { posts: @adoption }
+    = link_to 'Ver todos', adoption_posts_path

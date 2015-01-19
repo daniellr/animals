@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
 
 	attr_accessor :image
+	geocoded_by :location
+	after_validation :geocode
 	belongs_to :user
 
 	before_validation :set_defaults, on: :create
@@ -8,10 +10,9 @@ class Post < ActiveRecord::Base
 	validates :title, :state, :contact, :description, presence: true
 	validates :image, presence: true if Rails.env.production?
 
-	after_validation :geocode, :if => :location_changed?
 
 	mount_uploader :image, ImageUploader
-	geocoded_by :location
+
 
 	scope :found, 		-> { where(state: 'found') }
 	scope :lost,			-> { where(state: 'lost') }

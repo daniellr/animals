@@ -17,6 +17,7 @@ gem 'rails_12factor'
 gem 'fog'
 gem 'cloudinary'
 gem 'geocoder'
+gem 'gmaps4rails'
 
 # Auth
 gem 'devise'
