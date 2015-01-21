@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Peteretes - Encuentra y ayuda a encontrar mascotas perdidas.</title>
+    <meta content="width=device-width" name="viewport"/>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' %>
+    <%= javascript_include_tag 'https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'google_analytics' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

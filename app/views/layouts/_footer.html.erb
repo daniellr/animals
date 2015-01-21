@@ -1,0 +1,31 @@
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+        <%= link_to "Publicar", new_post_path, class: 'btn btn-primary' %>
+      </div>
+      <a href="https://twitter.com/peteretescom">
+        <img alt="twitter" src="<%= asset_path('social-32-twitter.png') %>"/>
+      </a>
+      <a href="https://www.facebook.com/peteretespeteretes">
+        <img alt="facebook" src="<%= asset_path('social-31-facebook.png') %>"/>
+      </a>
+      <span class="social social-facebook"></span>
+      <div class="col-md-8">
+        <ul>
+          <li>
+            <%= link_to "El Proyecto", page_path('about') %>
+          </li>
+          \-
+          <li>
+            <%= link_to "Colabora", page_path('collaborates') %>
+          </li>
+          \-
+          <li>
+            <%= link_to "Contacto", page_path('contact') %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
