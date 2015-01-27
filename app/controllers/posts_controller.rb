@@ -6,6 +6,13 @@ class PostsController < ApplicationController
     @found    = Post.found.order(created_at: :desc).limit(3)
     @lost     = Post.lost.order(created_at: :desc).limit(3)
     @adoption = Post.adoption.order(created_at: :desc).limit(3)
+
+    # @posts = Post.all
+
+    # @hash = Gmaps4rails.build_markers(@posts) do |post, marker|
+    #   marker.lat post.latitude
+    #   marker.lng post.longitude
+    # end
   end
 
   def show
@@ -13,7 +20,7 @@ class PostsController < ApplicationController
       marker.lat post.latitude
       marker.lng post.longitude
       marker.infowindow post.description
-end
+    end
   end
 
   def new

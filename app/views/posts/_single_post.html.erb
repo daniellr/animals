@@ -1,0 +1,22 @@
+<% posts.each do |post| %>
+  <% if post.active? %>
+    <div class="thumbnail">
+      <h3>
+        <%= post.title %>
+      </h3>
+      <% if post.image.blank? %>
+        <%= image_tag "http://placehold.it/317x317", class: "img-responsive img-thumbnail" %>
+      <% else %>
+        <%= link_to image_tag(post.image_url.to_s), post_path(post), class: "img-responsive img-thumbnail" %>
+      <% end %>
+      <div class="caption">
+        <p>
+          <%= truncate post.description, length: 140 %>
+        </p>
+        <%= link_to 'Ver', post, class: "btn btn-default" %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+

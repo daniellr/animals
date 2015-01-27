@@ -1,25 +1,17 @@
 <div class="panel panel-default">
-
-  <div class="panel-heading">Descripción:</div>
-
-  <div class="panel-body">
-
-    <h3><%= @post.title %></h3>
-
-    <p><strong>¿Qué animalito es?</strong></p>
-
+<div class="panel-heading">Descripción:</div>
+<div class="panel-body">
+  <h3><%= @post.title %></h3>
+  <p><strong>¿Qué animalito es?</strong></p>
     <% if @post.animal_type == 'dog' %>
       <p>Perrito</p>
-
     <% elsif @post.animal_type == 'cat' %>
       <p>Gatito</p>
-
     <% end %>
-    <p><strong>Raza:</strong></p>
-    <%= @post.breed %>
-
+  <p><strong>Raza:</strong></p>
+  <%= @post.breed %>
     <p><strong>Edad:</strong></p>
-    <%= @post.age %>
+  <%= @post.age %>
 
     <p><strong>¿Dónde?</strong></p>
     <%= @post.location %>
